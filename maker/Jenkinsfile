@@ -44,10 +44,9 @@ pipeline {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_CREDENTIALS_ID}") {
                         // FIX: docker.build() builds the image; docker.image() only references an existing one
-                        def appImage = docker.build(
-    "${DOCKER_IMAGE}:${env.BUILD_NUMBER}",
-    "./maker"
-)
+                        def appImage = docker.build( "${DOCKER_IMAGE}:${env.BUILD_NUMBER}","./maker")
+                        appImage.push()
+                        appImage.push('latest')
                     }
                 }
             }
