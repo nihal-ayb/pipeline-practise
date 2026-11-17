@@ -13,7 +13,7 @@ pipeline {
         GIT_CREDENTIALS_ID    = 'github-cred'
         MANIFEST_REPO         = 'https://github.com/nihal-ayb/pipeline-practise.git'
         MANIFEST_BRANCH       = 'main'
-        MANIFEST_FILE         = 'manifests/deployment.yaml'
+        MANIFEST_FILE         = 'maker/manifests/deployment.yaml'
     }
 
     stages {
